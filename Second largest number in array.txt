@@ -1,0 +1,32 @@
+#include <iostream>
+#include <climits> // for INT_MIN
+using namespace std;
+
+int main()
+{
+    int ar[6] = {23, 25, 65, 35, 77, 99};
+    int largest = ar[0];
+    int seclargest = INT_MIN;
+
+    // Finding the largest element
+    for (int i = 1; i < 6; i++)
+    {
+        if (ar[i] > largest)
+        {
+            largest = ar[i];
+        }
+    }
+    cout << "The largest number: " << largest << endl;
+
+    // Finding the second largest element
+    for (int i = 0; i < 6; i++)
+    {
+        if (ar[i] != largest && ar[i] > seclargest)
+        {
+            seclargest = ar[i];
+        }
+    }
+    cout << "The second largest number: " << seclargest << endl;
+
+    return 0;
+}
