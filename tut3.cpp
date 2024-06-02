@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n ;
+    int ar[n];
+    int i,d;
+    cout<<"Enter the number to place the d terms rotate left side "<<endl;
+    cin>>d;
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    cout<<"Enter the array element"<<endl;
+
+    for(int i=0; i<n; i++)
+    {
+        cin>>ar[i];
+    }
+    int temp[d];
+    for(int i=0; i<d; i++)
+    {
+        temp[i]=ar[i];
+    }
+
+    for(int i=d; i<n; i++)
+    {
+        ar[i-d]=ar[i];
+    }
+    for(int i=0; i<d; i++)
+    {
+        ar[n-d+i] = temp[i];
+    }
+    for(int i=0; i<n; i++)
+    {
+        cout<<" "<<ar[i];
+    }
+
+    return 0;
+}
